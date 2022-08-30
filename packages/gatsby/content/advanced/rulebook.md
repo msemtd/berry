@@ -103,7 +103,7 @@ yarn run --inspect jest
 
 ## Published packages should avoid using `npm run` in their scripts
 
-**Why?** This is a tricky one ... basically, it boils down to: package managers are not interchangeable. Using one package manager on a project installed by another is a recipe for troubles, as they follow different configuration settings and rules. For example, Yarn offers a hook system that allows its users to track which scripts are executed and how much time they take. Because `npm run` wouldn't know how to call these hooks, they would get ignore, leading to frustrating experiences for your consumers.
+**Why?** This is a tricky one ... basically, it boils down to: package managers are not interchangeable. Using one package manager on a project installed by another is a recipe for troubles, as they follow different configuration settings and rules. For example, Yarn offers a hook system that allows its users to track which scripts are executed and how much time they take. Because `npm run` wouldn't know how to call these hooks, they would get ignored, leading to frustrating experiences for your consumers.
 
 **Solution:** While not the most esthetically pleasing option, the most portable one at the moment is to simply replace `npm run <name>` (or `yarn run <name>`) in your postinstall scripts and derived by the following:
 
